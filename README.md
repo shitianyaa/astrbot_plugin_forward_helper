@@ -42,7 +42,7 @@ print(result.summary())
 
 | 配置项 | 默认 | 含义 |
 | --- | --- | --- |
-| `chunk_size` | `20` | 每块节点数，超出则分多条聊天记录 |
+| `chunk_size` | `6` | 每块节点数，超出则分多条聊天记录 |
 | `retries` | `2` | 单块重试次数 |
 | `degrade_on_failure` | `true` | 失败/平台不支持时降级为逐条发送 |
 | `default_node_name` / `default_uin` | `合并转发` / `0` | 节点署名兜底 |

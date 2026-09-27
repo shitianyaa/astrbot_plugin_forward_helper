@@ -207,7 +207,8 @@ def test_normalize_items_mixed_inputs():
 def test_build_chunks_sizes():
     items = normalize_items([f"n{i}" for i in range(25)])
     assert [len(c) for c in build_chunks(items, 20)] == [20, 5]
-    assert [len(c) for c in build_chunks(items, 0)] == [20, 5]  # 非法 size 用默认
+    assert [len(c) for c in build_chunks(items, 6)] == [6, 6, 6, 6, 1]
+    assert [len(c) for c in build_chunks(items, 0)] == [6, 6, 6, 6, 1]  # 非法 size 回落默认 6
     assert build_chunks([], 20) == [[]]
 
 

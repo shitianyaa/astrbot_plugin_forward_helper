@@ -37,7 +37,7 @@ except ImportError:  # pragma: no cover
 #: 支持 Node/Nodes 合并转发的平台 ID（OneBot v11 系）
 PLATFORMS_WITH_NODES: tuple[str, ...] = ("aiocqhttp", "onebot", "onebot_v11")
 
-DEFAULT_CHUNK_SIZE = 20
+DEFAULT_CHUNK_SIZE = 6
 MAX_IMAGES_PER_NODE = 9
 
 
@@ -364,7 +364,7 @@ async def send_forward(
         umo: 目标会话（platform:message_type:session_id）；缺省用 event 所在会话。
             指向其它会话时按目标平台能力判断是否合并转发。
         title: 首个节点顶部的标题文本。
-        chunk_size: 每块节点数（默认 20），超过则分多条聊天记录发送。
+        chunk_size: 每块节点数（默认 6），超过则分多条聊天记录发送。
         retries: 单块发送失败时的重试次数（总尝试 = 1 + retries，至少尝试 1 次）。
         degrade_on_failure: 平台不支持或被拒时，是否降级为逐条发送。
         default_node_name / default_uin: 条目未指定时的署名与 uin 兜底。

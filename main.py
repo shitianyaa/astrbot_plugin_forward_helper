@@ -92,7 +92,7 @@ class SendForwardTool(FunctionTool):
             event=_event_of(context),
             umo=str(kwargs.get("umo") or ""),
             title=str(kwargs.get("title") or ""),
-            chunk_size=int(_cfg(cfg, "chunk_size", 20)),
+            chunk_size=int(_cfg(cfg, "chunk_size", 6)),
             retries=int(_cfg(cfg, "retries", 2)),
             degrade_on_failure=bool(_cfg(cfg, "degrade_on_failure", True)),
             default_node_name=str(_cfg(cfg, "default_node_name", "合并转发")),

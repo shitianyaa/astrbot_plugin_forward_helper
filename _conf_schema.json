@@ -2,7 +2,7 @@
   "chunk_size": {
     "description": "每块最多几个节点：条目更多时会分成多条聊天记录依次发送",
     "type": "int",
-    "default": 20
+    "default": 6
   },
   "retries": {
     "description": "单块发送失败时的重试次数",
