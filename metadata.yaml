@@ -1,0 +1,9 @@
+name: astrbot_plugin_forward_helper
+display_name: 合并转发助手
+short_desc: 无门禁的合并转发方法，供 agent 与其它插件按需调用
+desc: 把 QQ「合并转发（Node/Nodes 聊天记录）」封装成一个按需调用的方法：agent 工具 send_forward（支持 dry_run 预检），或由其它插件直接 import forward_api.send_forward(...) 复用。不设任何条件门禁，是否调用由调用方决定。条目超过 chunk_size 自动分块，单块发送失败按 retries 重试；平台不支持 Node/Nodes 或发送被拒时按 degrade_on_failure 降级为逐条发送，结果区分全部合并送达、部分块降级与未送达明细。仅 OneBot v11（aiocqhttp）支持真正的合并转发，这是平台能力而非插件限制。
+version: v0.1.1
+author: shitianyaa
+astrbot_version: ">=4.16"
+support_platforms:
+  - aiocqhttp

@@ -1,0 +1,27 @@
+{
+  "chunk_size": {
+    "description": "每块最多几个节点：条目更多时会分成多条聊天记录依次发送",
+    "type": "int",
+    "default": 20
+  },
+  "retries": {
+    "description": "单块发送失败时的重试次数",
+    "type": "int",
+    "default": 2
+  },
+  "degrade_on_failure": {
+    "description": "平台不支持合并转发或发送被拒时，自动改为逐条普通消息发送",
+    "type": "bool",
+    "default": true
+  },
+  "default_node_name": {
+    "description": "默认节点署名：条目未指定 name 时使用",
+    "type": "string",
+    "default": "合并转发"
+  },
+  "default_uin": {
+    "description": "默认节点 uin：条目未指定 uin 时使用",
+    "type": "string",
+    "default": "0"
+  }
+}
